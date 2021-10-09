@@ -25,10 +25,11 @@
             </ul>
         </nav>
     </div>
-        <!--
-            * As tags label e input são ligadas através das propriedades for e id que precisam conter o mesmo nome
-            * Os dados do formulário são capturados através da tag input com sua propriedade name que precisa ser igual a classe
-        -->
+    <!--
+        * As tags label e input são ligadas através das propriedades for e id que precisam conter o mesmo nome
+        * Os dados do formulário são capturados através da tag input com sua propriedade name que precisa ser igual a classe
+    -->
+    <main class="conteudo">
         <form class="formulario" action="~/Serie/Salvar" method="post">
 
             <h1>Cadastro de Serie</h1>
@@ -46,7 +47,51 @@
 
             <button type="submit">Salvar</button>
             <button type="reset">Limpar</button>
-
         </form>
+
+        <!--
+            <table>
+                <tr>
+                    <th>
+                        Listar todos os diretórios "Views"
+                    </th>
+                </tr>
+                @@foreach (var lista in ViewBag.listOfDirectories)
+                {
+                    <tr>
+                        <td>@@lista</td>
+                    </tr>
+                }
+            </table>
+
+            <table>
+                <tr>
+                    <th>
+                        Listar arquivos em um diretório específico "Views"
+                    </th>
+                </tr>
+                @@foreach (var lista in ViewBag.files)
+                {
+                    <tr>
+                        <td>@@lista</td>
+                    </tr>
+                }
+            </table>
+
+            <table>
+                <tr>
+                    <th>
+                        Listar todo o conteúdo de um diretório e todos os subdiretórios "Views"
+                    </th>
+                </tr>
+                @@foreach (var lista in ViewBag.allFilesInAllFolders)
+                {
+                    <tr>
+                        <td>@@lista</td>
+                    </tr>
+                }
+            </table
+        -->
+    </main>
 </body>
 </html>

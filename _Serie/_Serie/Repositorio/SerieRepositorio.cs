@@ -42,10 +42,16 @@ namespace _Serie.Repositorio
             entidade.Id = GerarId();
 
             lista.Add(entidade);
+        }
 
-            
+        public void Escrever(Serie entidade)
+        {
+            Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Dados"));
 
-            File.AppendAllText("~/Dados/Serie.txt", $"{entidade.Id}#{entidade.Genero}#{entidade.Titulo}");
+            File.AppendAllText(
+                Path.Combine(Directory.GetCurrentDirectory(), "Dados", "Serie.txt"), 
+                $"{DateTime.Now}#{entidade.Id}#{entidade.Genero}#{entidade.Titulo}{Environment.NewLine}"
+            );
         }
     }
 }

@@ -3,6 +3,7 @@ using _Serie.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,12 +15,24 @@ namespace _Serie.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<String> listOfDirectories = Directory.EnumerateDirectories("Views");
+            ViewBag.listOfDirectories = listOfDirectories;
+
+            IEnumerable<string> files = Directory.EnumerateFiles("Views");
+            ViewBag.files = files;
+
+            // "*" pode ser subistituido por "*.txt" ou por outra extensão"
+            IEnumerable<string> allFilesInAllFolders = Directory.EnumerateFiles("Views", "*", SearchOption.AllDirectories);
+            ViewBag.allFilesInAllFolders = allFilesInAllFolders;
+
+            return View("Index", ViewBag);
         }
 
         public IActionResult Salvar(Serie entidade)
-        {   
+        {
             serieRepositorio.Salvar(entidade);
+
+            serieRepositorio.Escrever(entidade);
 
             return View("Lista", serieRepositorio.Listar());
         }
@@ -28,5 +41,6 @@ namespace _Serie.Controllers
         {
             return View("Lista", serieRepositorio.Listar());
         }
+
     }
 }

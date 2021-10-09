@@ -1,71 +1,133 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+﻿* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+background-color: gray;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+.cabecalho {
+display: grid;
+grid-template-columns: 1fr 1fr;
+background-color: black;
+}
+
+.logo {
+display: grid;
+justify-content: center;
+}
+
+.logo img {
+width: 400px;
+height: 20px 0px;
+}
+
+.menu {
+display: grid;
+justify-content: center;
+align-content: center;
+}
+
+.menu nav {
+}
+
+.menu li {
+display: inline-block;
+margin: 0 30px;
+}
+
+.menu a {
+text-decoration: none;
+text-transform: uppercase;
+color: gray;
+}
+
+.menu a:hover {
+color: white;
+}
+
+.conteudo {
+display: grid;
+justify-content: center;
+background-color: gray;
+}
+
+.formulario {
+text-transform: uppercase;
+background-color: black;
+color: gray;
+padding: 20px;
+border-radius: 20px;
+margin: 100px 0 0 0;
+}
+
+.formulario h1 {
+text-align: center;
+}
+
+.formulario label {
+display: block;
+margin: 10px 0;
+}
+
+.formulario select {
+display: block;
+width: 380px;
+padding: 0 200px 0 0;
+text-transform: uppercase;
+}
+
+.formulario input {
+text-transform: uppercase;
+font-weight: bold;
+padding: 0 200px 0 0;
+display: block;
+}
+
+.formulario button {
+margin: 10px 0 0 0;
+text-transform: uppercase;
+font-weight: bold;
+}
+
+.formulario button:hover {
+cursor: pointer;
+}
+
+.catalogo {
+background-color: gray;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(185px, auto));
+margin: 100px 0 0 0;
+}
+
+.catalogo .item {
+display: grid;
+justify-content: center;
+}
+
+.catalogo .item img {
+width: 185px;
+height: 278px;
+}
+
+.tabela {
+background-color: black;
+color: gray;
+text-transform: uppercase;
+text-align: center;
+padding: 20px;
+border-radius: 20px;
+margin: 100px 0;
+}
+
+.tabela th {
+font-size: 32px;
+}
+
+.tabela td {
+border: solid 1px;
+color: white;
 }
