@@ -1,0 +1,56 @@
+﻿@model List<_Serie.Models.Serie>
+
+<!--
+    *Criar projeto com anderlaine "_"
+    *Alterar rota padrão do controller na classe "Startup" procurar por pattern: "{controller=Serie}/{action=Index}/{id?}");
+-->
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="~/Serie/Index">Index</a></li>
+
+                <li><a href=~/Serie/Listar>Lista</a></li>
+            </ul>
+        </nav>
+    </div>
+        
+    @if (Model.Count() != 0)
+     {
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Genero</th>
+                <th>Titulo</th>
+            </tr>
+
+       @foreach (var lista in Model)
+            {
+            <tr>
+                <td>@lista.RetornarId()</td>
+                <td>@lista.RetornarGenero()</td>
+                <td>@lista.RetornarTitulo()</td>
+            </tr>
+        }
+        </table>
+     }
+    
+    else
+    {
+        <p>Não existe item na lista!</p>
+    }
+</body>
+</html>

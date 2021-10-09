@@ -6239,9 +6239,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repository\\Desenvolvimento\\_Serie\\_Serie\\Serie.csproj",
-      "projectName": "Serie",
-      "projectPath": "C:\\Repository\\Desenvolvimento\\_Serie\\_Serie\\Serie.csproj",
+      "projectUniqueName": "C:\\Repository\\Desenvolvimento\\_Serie\\_Serie\\_Serie.csproj",
+      "projectName": "_Serie",
+      "projectPath": "C:\\Repository\\Desenvolvimento\\_Serie\\_Serie\\_Serie.csproj",
       "packagesPath": "C:\\Users\\J\\.nuget\\packages\\",
       "outputPath": "C:\\Repository\\Desenvolvimento\\_Serie\\_Serie\\obj\\",
       "projectStyle": "PackageReference",

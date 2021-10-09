@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Llv3zof8VKJpbbDWV9xUe2PVfskl1Y8yI7PVkZ31Ix4mgx7wYuC9d20KUvspE+VxIxifpAfA9oF1mUJ+Ix0vA==",
+  "dgSpecHash": "flkRS0JquGEXKCgEJSvbvJuNo15hbBpYFf+f6SA2vlqigzWC37CPDTRHWAsaKy5kjnK14q8Q77zaA0WA766sVw==",
   "success": true,
-  "projectFilePath": "C:\\Repository\\Desenvolvimento\\_Serie\\_Serie\\Serie.csproj",
+  "projectFilePath": "C:\\Repository\\Desenvolvimento\\_Serie\\_Serie\\_Serie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\J\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\J\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
