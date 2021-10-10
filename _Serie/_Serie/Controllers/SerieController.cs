@@ -33,8 +33,10 @@ namespace _Serie.Controllers
             serieRepositorio.Salvar(entidade);
 
             serieRepositorio.EscreverFileAdicionar(entidade);
+            ViewBag.Adicionar = serieRepositorio.LerFileAdicionar();
+            ViewBag.Cadastrar = serieRepositorio.LerFileCadastrar();
 
-            return View("Lista", serieRepositorio.Listar());
+            return View("Lista", ViewBag);
         }
 
         public IActionResult Listar()
