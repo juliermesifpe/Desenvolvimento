@@ -1,4 +1,4 @@
-﻿@model List<_Serie.Models.Serie>
+﻿<!--@@model List<_Serie.Models.Serie> -->
 
 <!--
     *Criar projeto com anderlaine "_"
@@ -14,44 +14,84 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Lista</title>
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
 <body>
-    <div class="menu">
-        <nav>
-            <ul>
-                <li><a href="~/Serie/Index">Index</a></li>
+    <header class="cabecalho">
+        <div class="logo"><img src="~/imagem/Logo.jpeg" alt="Logo" /></div>
 
-                <li><a href=~/Serie/Listar>Lista</a></li>
-            </ul>
-        </nav>
-    </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="~/Serie/Index">Cadastro</a></li>
+
+                    <li><a href=~/Serie/Listar>Animes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <main class="catalogo">
-        @if (Model.Count() != 0)
-         {
-            <table class="tabela">
+
+
+        @if (!ViewBag.Adicionar.Equals(""))
+        {
+            @foreach (var lista in ViewBag.Adicionar)
+            {
+                string[] item = lista.Split('#');
+
+                var imagem = "";
+
+                foreach (var list in ViewBag.Cadastrar)
+                {
+                    string[] ite = list.Split('#');
+
+                    if (ite[0] == item[3])
+                    {
+                        imagem = item[3] + ".jpg";
+                        break;
+                    }
+                    else
+                    {
+                        imagem = "indisponivel.png";
+                    }
+                }
+                <div class="item">
+                    <img src="~/imagem/@imagem" alt="@item[2]" />
+                </div>
+            }
+        }
+
+
+
+        <!--
+        @@if (Model.Count() != 0)
+        {
+
+           <table class="tabela">
                 <tr>
                     <th>Id</th>
                     <th>Genero</th>
                     <th>Titulo</th>
                 </tr>
 
-                @foreach (var lista in Model)
+                @@foreach (var lista in Model)
                 {
                     <tr>
-                        <td>@lista.RetornarId()</td>
-                        <td>@lista.RetornarGenero()</td>
-                        <td>@lista.RetornarTitulo()</td>
+                        <td>@@lista.RetornarId()</td>
+                        <td>@@lista.RetornarGenero()</td>
+                        <td>@@lista.RetornarTitulo()</td>
                     </tr>
                 }
             </table>
-         }
+        }
 
         else
         {
             <p>Não existe item na lista!</p>
         }
+    -->
     </main>
 </body>
 </html>

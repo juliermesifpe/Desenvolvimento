@@ -32,14 +32,17 @@ namespace _Serie.Controllers
         {
             serieRepositorio.Salvar(entidade);
 
-            serieRepositorio.Escrever(entidade);
+            serieRepositorio.EscreverFileAdicionar(entidade);
 
             return View("Lista", serieRepositorio.Listar());
         }
 
         public IActionResult Listar()
         {
-            return View("Lista", serieRepositorio.Listar());
+            //serieRepositorio.Listar();
+            ViewBag.Adicionar = serieRepositorio.LerFileAdicionar();
+            ViewBag.Cadastrar = serieRepositorio.LerFileCadastrar();
+            return View("Lista", ViewBag);
         }
 
     }

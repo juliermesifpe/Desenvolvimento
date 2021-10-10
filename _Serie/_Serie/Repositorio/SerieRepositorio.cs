@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _Serie.Repositorio
 {
-    public class SerieRepositorio : Interface<Serie>
+    public class SerieRepositorio : IEntidade<Serie>
     {
         private List<Serie> lista = new List<Serie>();
 
@@ -44,14 +44,28 @@ namespace _Serie.Repositorio
             lista.Add(entidade);
         }
 
-        public void Escrever(Serie entidade)
+        public void EscreverFileAdicionar(Serie entidade)
         {
-            Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Dados"));
+            Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "File"));
 
             File.AppendAllText(
-                Path.Combine(Directory.GetCurrentDirectory(), "Dados", "Serie.txt"), 
+                Path.Combine(Directory.GetCurrentDirectory(), "File", "Adicionar.txt"),
                 $"{DateTime.Now}#{entidade.Id}#{entidade.Genero}#{entidade.Titulo}{Environment.NewLine}"
             );
+        }
+
+        public IEnumerable<string> LerFileAdicionar()
+        {
+            var lista = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "File", "Adicionar.txt"));
+
+            return lista;
+        }
+
+        public IEnumerable<string> LerFileCadastrar()
+        {
+            var lista = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "File", "Cadastrar.txt"));
+            
+            return lista;
         }
     }
 }
